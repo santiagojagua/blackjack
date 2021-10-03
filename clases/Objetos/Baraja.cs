@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace clases.Objetos
 {
-    class Baraja
+    public class Baraja
     {
         Queue<Carta> MazoCartas;
 
@@ -47,7 +47,7 @@ namespace clases.Objetos
             }
         }
 
-        public Carta CartasCrupier()
+        public Carta CartasIniciales()
         {
             return MazoCartas.Dequeue();
         }

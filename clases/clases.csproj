@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
+    <Compile Include="Jugador.cs" />
     <Compile Include="Objetos\Baraja.cs" />
     <Compile Include="Objetos\Carta.cs" />
     <Compile Include="Objetos\PintaCarta.cs" />

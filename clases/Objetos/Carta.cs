@@ -17,7 +17,7 @@ namespace clases.Objetos
                 return this.pinta;
             }
         }
-        public ValorCarta Value
+        public ValorCarta Valor
         {
             get
             {
