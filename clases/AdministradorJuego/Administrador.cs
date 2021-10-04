@@ -82,7 +82,7 @@ namespace clases.AdministradorJuego
             PrimerasDosCartas();
         }
 
-        private int GetPuntuacionMano(List<Carta> cartas)
+        public int GetPuntuacionMano(List<Carta> cartas)
         {
             int puntuacion = 0;
             for (int i = 0; i < cartas.Count; i++)
@@ -125,7 +125,8 @@ namespace clases.AdministradorJuego
 
         public int GetPuntuacionCrupier()
         {
-            return crupier.GetPuntiacion();
+            return crupier.GetPuntuacion();
         }
+
     }
 }

@@ -23,6 +23,8 @@ namespace blackjackGUI
         private int crupiercartaXPos = empezarcrupierXPos;
         public List<PictureBox> jugadorCartasToDisplay;
         public List<PictureBox> crupiercartas;
+        private static int contadorv = 0;
+        private static int contadord = 0;
 
 
         public Blackjack()
@@ -90,20 +92,24 @@ namespace blackjackGUI
             DibujarCrupier(aj.Getcartacrupier()[1]);
             DibujarCrupier(aj.Getcartacrupier()[0]);
 
-            while (aj.GetPuntuacionCrupier() < 17)
+            while (aj.GetPuntuacionCrupier() < jugador.GetPuntuacion())
             {
                 aj.DaraCartaCrupier();
-                dealerScore.Text = "Dealer score: " + aj.GetPuntuacionCrupier();
+                dealerScore.Text = "Puntuación crupier: " + aj.GetPuntuacionCrupier();
                 DibujarCrupier(aj.Ultimacartacrupier);
             }
 
-            if (aj.GetPuntuacionCrupier() > jugador.GetPuntiacion() && aj.GetPuntuacionCrupier() < 22)
+            if (aj.GetPuntuacionCrupier() > jugador.GetPuntuacion() && aj.GetPuntuacionCrupier() < 22)
             {
                 resultLabel.Text = "Crupier gana!";
+                contadord += 1;
+                loseLabel.Text = "Derrotas: " + contadord;
             }
             else
             {
                 resultLabel.Text = "Jugador gana!";
+                contadorv += 1;
+                victoryLabel.Text = "Victorias: " + contadorv;
             }
 
         }
@@ -114,7 +120,7 @@ namespace blackjackGUI
             if (!jugador.Volar)
             {
                 jugador.DarCarta(aj.CartasIniciales());
-                playerScore.Text = "Score: " + jugador.GetPuntiacion();
+                playerScore.Text = "Score: " + jugador.GetPuntuacion();
                 DibujarCartasJugador(jugador.Ultimacarta());
 
                 if (jugador.Volar)
@@ -123,6 +129,8 @@ namespace blackjackGUI
                     standButton.Enabled = false;
                     splitButton.Enabled = false;
                     resultLabel.Text = "Crupier gana!";
+                    contadord += 1;
+                    loseLabel.Text = "Derrotas: " + contadord;
                 }
             }
         }
@@ -139,7 +147,7 @@ namespace blackjackGUI
             jugadorCartaXPos = empezarXPos;
             List<Carta> cartasjugador = jugador.MostrarMano();
             aj.EmpezarNuevojuego();
-            playerScore.Text = "Score: " + jugador.GetPuntiacion();
+            playerScore.Text = "Score: " + jugador.GetPuntuacion();
             dealerScore.Text = "";
             DibujarCartasJugador(cartasjugador[0]);
             DibujarCartasJugador(cartasjugador[1]);
@@ -149,11 +157,13 @@ namespace blackjackGUI
             {
                 splitButton.Enabled = true;
             }
-            if (jugador.GetPuntiacion() == 21)
+            if (jugador.GetPuntuacion() == 21)
             {
                 resultLabel.Text = "Blackjack! Jugador gana!";
                 hitMeButton.Enabled = false;
                 standButton.Enabled = false;
+                contadorv += 1;
+                victoryLabel.Text = "Victorias: " + contadorv;
             }
         }
 

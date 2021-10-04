@@ -34,7 +34,7 @@ namespace clases.Persona
             return mano[mano.Count - 1];
         }
 
-        public int GetPuntiacion()
+        public int GetPuntuacion()
         {
             mipuntuacion = 0;
             for (int i = 0; i < mano.Count; i++)
