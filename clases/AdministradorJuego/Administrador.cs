@@ -82,7 +82,7 @@ namespace clases.AdministradorJuego
             PrimerasDosCartas();
         }
 
-        public int GetPuntuacionMano(List<Carta> cartas)
+        private int GetPuntuacionMano(List<Carta> cartas)
         {
             int puntuacion = 0;
             for (int i = 0; i < cartas.Count; i++)

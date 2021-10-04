@@ -61,7 +61,7 @@ namespace blackjackGUI
             this.standButton.Name = "standButton";
             this.standButton.Size = new System.Drawing.Size(100, 28);
             this.standButton.TabIndex = 1;
-            this.standButton.Text = "Pararse";
+            this.standButton.Text = "Parar";
             this.standButton.UseVisualStyleBackColor = true;
             this.standButton.Click += new System.EventHandler(this.standButton_Click);
             // 
@@ -129,7 +129,7 @@ namespace blackjackGUI
             this.loseLabel.AutoSize = true;
             this.loseLabel.Location = new System.Drawing.Point(20, 137);
             this.loseLabel.Name = "loseLabel";
-            this.loseLabel.Size = new System.Drawing.Size(46, 17);
+            this.loseLabel.Size = new System.Drawing.Size(71, 17);
             this.loseLabel.TabIndex = 12;
             this.loseLabel.Text = "Derrotas: ";
             // 
