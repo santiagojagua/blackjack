@@ -10,7 +10,7 @@ namespace clases.Objetos
     {
         private PintaCarta pinta;
         private ValorCarta valor;
-        public PintaCarta Suit
+        public PintaCarta Pinta
         {
             get
             {

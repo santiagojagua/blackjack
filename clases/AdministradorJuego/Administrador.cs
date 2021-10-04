@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using clases.Persona;
 
-namespace clases
+namespace clases.AdministradorJuego
 {
     public class Administrador
     {
@@ -19,7 +20,7 @@ namespace clases
         {
             get
             {
-                return crupier.ShowHand()[0];
+                return crupier.MostrarMano()[0];
             }
         }
 
@@ -27,13 +28,13 @@ namespace clases
         {
             get
             {
-                return crupier.ShowHand()[crupier.ShowHand().Count - 1];
+                return crupier.MostrarMano()[crupier.MostrarMano().Count - 1];
             }
         }
 
         public List<Carta> Getcartacrupier()
         {
-            return crupier.ShowHand();
+            return crupier.MostrarMano();
         }
 
         public Administrador()
@@ -122,7 +123,7 @@ namespace clases
             crupier.DarCarta(barajajuego.CartasIniciales());
         }
 
-        public int GetDealerScore()
+        public int GetPuntuacionCrupier()
         {
             return crupier.GetPuntiacion();
         }

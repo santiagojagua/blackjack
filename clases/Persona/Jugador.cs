@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace clases
+namespace clases.Persona
 {
     public class Jugador
     {
@@ -24,7 +24,7 @@ namespace clases
             mano.Add(CartasCrupier);
         }
 
-        public List<Carta> ShowHand()
+        public List<Carta> MostrarMano()
         {
             return mano;
         }
@@ -39,9 +39,9 @@ namespace clases
             mipuntuacion = 0;
             for (int i = 0; i < mano.Count; i++)
             {
-                if ((int)mano[i].Value < 10)
+                if ((int)mano[i].Valor < 10)
                 {
-                    mipuntuacion += (int)mano[i].Value;
+                    mipuntuacion += (int)mano[i].Valor;
                 }
                 else
                 {
@@ -49,7 +49,7 @@ namespace clases
                 }
             }
 
-            if (mano.Count == 2 && ((mano[0].Value == ValorCarta.Ace && (int)mano[1].Value >= 10) || (mano[1].Value == ValorCarta.Ace && (int)mano[0].Value >= 10)))
+            if (mano.Count == 2 && ((mano[0].Valor == ValorCarta.Ace && (int)mano[1].Valor >= 10) || (mano[1].Valor == ValorCarta.Ace && (int)mano[0].Valor >= 10)))
             {
                 return 21;
             }
