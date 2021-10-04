@@ -99,7 +99,7 @@ namespace blackjackGUI
                 DibujarCrupier(aj.Ultimacartacrupier);
             }
 
-            if (aj.GetPuntuacionCrupier() > jugador.GetPuntuacion() && aj.GetPuntuacionCrupier() < 22)
+            if (aj.GetPuntuacionCrupier() >= jugador.GetPuntuacion() && aj.GetPuntuacionCrupier() < 22)
             {
                 resultLabel.Text = "Crupier gana!";
                 contadord += 1;
